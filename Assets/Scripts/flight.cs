@@ -20,7 +20,7 @@ public class flight : MonoBehaviour {
 		
 		if(Input.GetKeyDown("space")){
 			Instantiate(bulletPrefab, transform.position, transform.rotation);
-			Debug.Log("space pressed");
+			//Debug.Log("space pressed");
 		}		
 		
 	}
