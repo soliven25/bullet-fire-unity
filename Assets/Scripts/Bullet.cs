@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour {
 	{
 		
 	    Debug.Log("name " + other.gameObject.name);
-		other.gameObject.damage++;
+
 		//Destroy(other.gameObject);
 		//Destroy(gameObject);  // to destroy bullet
 		Debug.Log("bullet Collider");
