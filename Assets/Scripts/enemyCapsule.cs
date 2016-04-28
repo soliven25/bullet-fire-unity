@@ -11,24 +11,30 @@ public class enemyCapsule : MonoBehaviour {
 	
 	public AudioClip destroySound;
 	AudioSource audioEnemy;
+	
+	public float speed = 50f;
 	void Start () {
 		
 		damage = 0;
 		hp = 5;
 		audioEnemy = GetComponent<AudioSource>();
 		audioEnemy.clip = destroySound;
-	
+		
+		GetComponent<Rigidbody>().AddForce(transform.forward*speed);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(damage == hp){
 			
-			
 			audioEnemy.Play();
 			Destroy(gameObject);
 		}
-	
+		
+		if(transform.position.z > 1)
+		{
+			Destroy(gameObject);	
+		}	
 	}	
 	void OnCollisionEnter(Collision collision)
 	{
@@ -36,6 +42,7 @@ public class enemyCapsule : MonoBehaviour {
 		Debug.Log("Enter Collision capsule");
 		damage++;
 		
-	}
-	
+		transform.GetComponent<Renderer>().material.color = Color.yellow;	
+		this.transform.localScale -= new Vector3(0.0f,0.5f,0.0f);
+	}	
 }

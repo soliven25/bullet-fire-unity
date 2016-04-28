@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GetComponent<Rigidbody>().AddForce(transform.forward*speed);
-		transform.GetComponent<Renderer>().material.color = Color.red;
+		//transform.GetComponent<Renderer>().material.color = Color.red;
 	}
 	
 	// Update is called once per frame

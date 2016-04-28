@@ -7,9 +7,12 @@ public class flight : MonoBehaviour {
 	// Use this for initialization
 	public float speed;
 	public GameObject bulletPrefab;
+	public GameObject enemyPrefab;
 	
 	public AudioClip fireSound;
 	AudioSource audioFlight;
+	
+	public int updateCounter;
 	void Start () {
 		speed = 0.06F;
 		audioFlight = GetComponent<AudioSource>();
@@ -28,7 +31,17 @@ public class flight : MonoBehaviour {
 			audioFlight.Play();
 			Instantiate(bulletPrefab, transform.position, transform.rotation);
 			//Debug.Log("space pressed");
-		}		
+		}	
+		
+		updateCounter++;
+		
+		if(updateCounter%150 == 0)
+		{
+			updateCounter = 0;
+			Instantiate(enemyPrefab, transform.position, transform.rotation);				
+		}
+		
+		
 		
 	}
 }
