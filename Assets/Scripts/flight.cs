@@ -9,10 +9,10 @@ public class flight : MonoBehaviour {
 	public GameObject bulletPrefab;
 	
 	public AudioClip fireSound;
-	AudioSource audio;
+	AudioSource audioFlight;
 	void Start () {
 		speed = 0.06F;
-		audio = GetComponent<AudioSource>();
+		audioFlight = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -24,8 +24,8 @@ public class flight : MonoBehaviour {
 		transform.Translate(Vector3.up*speed*upDown, Space.World);
 		
 		if(Input.GetKeyDown("space")){
-			audio.clip = fireSound;
-			audio.Play();
+			audioFlight.clip = fireSound;
+			audioFlight.Play();
 			Instantiate(bulletPrefab, transform.position, transform.rotation);
 			//Debug.Log("space pressed");
 		}		
