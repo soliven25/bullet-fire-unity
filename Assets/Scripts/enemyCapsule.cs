@@ -25,4 +25,10 @@ public class enemyCapsule : MonoBehaviour {
 		Debug.Log("enemy Colider");
 	}
 	
+	void OnCollisionEnter(Collision collision)
+	{
+		Debug.Log("Enter Collision capsule");
+		
+	}
+	
 }
