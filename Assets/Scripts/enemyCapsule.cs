@@ -25,8 +25,7 @@ public class enemyCapsule : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(damage == hp){
-			
+		if(damage == hp){			
 			audioEnemy.Play();
 			Destroy(gameObject);
 		}
@@ -43,6 +42,6 @@ public class enemyCapsule : MonoBehaviour {
 		damage++;
 		
 		transform.GetComponent<Renderer>().material.color = Color.yellow;	
-		this.transform.localScale -= new Vector3(0.0f,0.5f,0.0f);
+		this.transform.localScale -= new Vector3(0.0f,0.3f,0.0f);
 	}	
 }

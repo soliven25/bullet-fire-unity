@@ -10,7 +10,6 @@ public class sky : MonoBehaviour {
 		Color color = spr.color;
 		color.a = 0.7f;
 		spr.color = color;
-	
 	}
 	
 	// Update is called once per frame

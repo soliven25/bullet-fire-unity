@@ -4,7 +4,7 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 	
 	public int damage = 20;
-	public float speed = 1000f;
+	public float speed = 2000f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,17 +19,14 @@ public class Bullet : MonoBehaviour {
 		{
 			Destroy(gameObject);	
 		}
-	
 	}
 	
 	void OnTriggerEnter(Collider other)
 	{
-		
 	    Debug.Log("name " + other.gameObject.name);
 
 		//Destroy(other.gameObject);
 		Destroy(gameObject);  // to destroy bullet
-		Debug.Log("bullet Collider");
-		
+		Debug.Log("bullet Collider");	
 	}
 }

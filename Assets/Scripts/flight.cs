@@ -40,8 +40,5 @@ public class flight : MonoBehaviour {
 			updateCounter = 0;
 			Instantiate(enemyPrefab, transform.position, transform.rotation);				
 		}
-		
-		
-		
 	}
 }
